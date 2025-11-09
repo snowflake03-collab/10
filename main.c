@@ -4,9 +4,10 @@
 
 int main(void)
 {
-    
+     
+
     char input[100];
-    FILE * fp;
+    //FILE * fp;
     int i;
     
     //fopen
@@ -18,8 +19,30 @@ int main(void)
       scanf("%s", input);
       fprintf(fp, "%s\n", input); 
 }
+
+
     //fclose
-    fclose(fp);
+    fclose(fp);    
+
+    FILE * fp = NULL;
+    char c;
+    
+    //fopen
+    fp = fopen("sample.txt","r");
+    if(fp == NULL)
+          printf("Failed to open file!\n");
+          return -1;
+
+    while((c = fgetc(fp)) != EOF){
+             putchar(c);
+             } 
+             
+    /*
+    while(fgets(input, 100, fp) > 0)
+    {
+                       printf("%i", input);
+    }
+    */
     
 
   system("PAUSE");	
